@@ -17,7 +17,6 @@ import Form from './src/components/Forms';
 import Footer from './src/components/Footer';
 import Result  from './src/components/Result';
 import { StatusBar } from 'react-native';
-import { transformFileSync } from '@babel/core';
 export default function App(){
   const [num1,setNum1]=useState(null);
   const [num2,setNum2]=useState(null);
@@ -60,7 +59,7 @@ return(
  <>
 <StatusBar barStyle="light-content"/>
  <SafeAreaView style={styles.Header}>
- <Text style={styles.HeadApp}>Ecuación cuadrática</Text>
+
 
 <Form 
 setNum1={setNum1}
