@@ -36,6 +36,8 @@ export default function App(){
       setErrorMessage('Añade el segundo valor');
     } else if (!num3.trim()) {
       setErrorMessage('Añade el tercer valor');
+    } else if ((Math.pow(num2,2)-(4*num1*num3))<0) {
+      setErrorMessage('Raíz negativa, intente resolver otra ecuación cuadrática');
       }else {
 
       const x1=(-num2+Math.sqrt(Math.pow(num2,2)-(4*num1*num3)))/(2*num1);
