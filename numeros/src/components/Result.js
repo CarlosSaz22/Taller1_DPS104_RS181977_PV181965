@@ -1,19 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { setCustomText } from 'react-native-global-props';
 export default function Result(props) {
-    const { numero1,numero2,numero3,numero4, total, errorMessage } = props;
+    const { numero1,numero2,numero3,numero4, total, errorMessage,mensajeMax,mensajeMin } = props;
     return (
         <View style={styles.content}>
             {total && (
                 <View style={styles.boxResult}>
-                    <Text style={styles.title}>RESUMEN DE SUELDO</Text>
+                    <Text style={styles.title}>Resultados de operación</Text>
                    
                    
-                    <DataResult title="Números ingresados: " value={`${numero1},${numero2},${numero3},${numero4} `} />
+                    <DataResult title="Números ingresados: " value={`${numero1} | ${numero2} | ${numero3} | ${numero4} `} />
 
                     <DataResult title="Máximo" value={`${total.maxi} `} />
-                     <DataResult title="Mínimo" value={`${total.mini} `} />
-
+                    
+                    
+                    <DataResult title="Mínimo"   value={`${total.mini} `} />
+                    <Text style={styles.textt}>{mensajeMax}</Text>
+                    <Text>{mensajeMin}</Text>
                 </View>
             )}
             <View>
@@ -36,9 +40,16 @@ function DataResult(props) {
 const styles = StyleSheet.create({
     content: {
         marginHorizontal: 40,
+        overflow:'scroll',
+        height:450,
+       
+       /* borderStyle: 'solid',
+        borderWidth:2,*/
     },
     boxResult: {
         padding: 30,
+        overflow:'scroll',
+        height:1000,
     },
     title: {
         fontSize: 25,
@@ -56,5 +67,8 @@ const styles = StyleSheet.create({
         color: '#f00',
         fontWeight: 'bold',
         fontSize: 20,
+    },
+    textt:{
+        marginBottom:15,
     },
 });

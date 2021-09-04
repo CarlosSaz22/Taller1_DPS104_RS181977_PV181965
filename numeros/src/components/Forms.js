@@ -44,7 +44,7 @@ export default function Form(props) {
 }
 const styles = StyleSheet.create({
     viewForm: {
-        position: 'absolute',
+        position: 'relative',
         bottom: 0,
         width: '100%',
         paddingHorizontal: 50,
@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         height: 180,
         justifyContent: 'center',
+        margin:20,
     },
     viewInputs: {
         flexDirection: 'row',
