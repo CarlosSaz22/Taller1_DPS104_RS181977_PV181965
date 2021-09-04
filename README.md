@@ -10,3 +10,5 @@ Enlaces de expo
 https://snack.expo.dev/@saz22/sueldo
 <br>
 https://snack.expo.dev/@saz22/cuadratica
+<br>
+https://snack.expo.dev/@saz22/numeros
