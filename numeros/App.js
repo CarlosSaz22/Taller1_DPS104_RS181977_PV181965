@@ -38,11 +38,10 @@ export default function App() {
 
    if (numero1.trim() <=0 || numero2.trim() <=0 || numero3.trim() <=0 || numero4.trim() <=0) {
       setErrorMessage('No pueden haber números negativos o 0 en los valores que ingresa. ');
-    } else if(!regg.test(numero1)){
+    } else if(!regg.test(numero1) || !regg.test(numero2) || !regg.test(numero3)  || !regg.test(numero4)){
 
       setErrorMessage('No puede ingresar números decimales, SOLO ENTEROS. ');
     }else { 
-
 
       const arregloNumeros =[numero1,numero2,numero3,numero4];
 
@@ -83,8 +82,7 @@ export default function App() {
       <SafeAreaView style={styles.Header}>
         <Text style={styles.HeadApp}>Calcular mayor y menor </Text>
         <Form
-          /*setNombre={setNombre}
-          setSueldo={setSueldo}*/
+          
           setNumero1={setNumero1}
           setNumero2={setNumero2}
           setNumero3={setNumero3}
@@ -93,15 +91,10 @@ export default function App() {
         />
       </SafeAreaView>
       <Result
-       /* nombre={nombre}
-        sueldo={sueldo}*/
-
         numero1={numero1}
         numero2={numero2}
         numero3={numero3}
         numero4={numero4}
-
-
         total={total}
         errorMessage={errorMessage}
         mensajeMax={mensajeMax}
