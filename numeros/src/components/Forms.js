@@ -14,6 +14,7 @@ export default function Form(props) {
                     keyboardType="numeric"
                     style={styles.input}
                     onChange={(e) => setNumero1(e.nativeEvent.text)}
+                    
                 />
 
             </View>

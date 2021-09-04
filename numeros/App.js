@@ -13,8 +13,7 @@ import Result from './src/components/Result';
 import { StatusBar } from 'react-native';
 export default function App() {
 
- /* const [nombre, setNombre] = useState(null);
-  const [sueldo, setSueldo] = useState(null);*/
+ 
   const [total, setTotal] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -34,19 +33,17 @@ export default function App() {
   const calculate = () => {
     reset();
 
-   /* if (!nombre.trim()) {
-      setErrorMessage('Añade el nombre ');
-    } else if (!sueldo.trim()) {
-      setErrorMessage('Añade el sueldo base');
-    } else if (sueldo <= 0) {
-      setErrorMessage('El sueldo debe ser mayor a 0');
-    } else { */
 
-     /* const AFP = sueldo * 0.04;
-      const ISSS = sueldo * 0.03;
-      const RENTA = sueldo * 0.05;
-      const sueldoneto = sueldo - AFP - ISSS - RENTA;*/
-      
+    let regg = /^([0-9])+$/;
+
+   if (numero1.trim() <=0 || numero2.trim() <=0 || numero3.trim() <=0 || numero4.trim() <=0) {
+      setErrorMessage('No pueden haber números negativos o 0 en los valores que ingresa. ');
+    } else if(!regg.test(numero1)){
+
+      setErrorMessage('No puede ingresar números decimales, SOLO ENTEROS. ');
+    }else { 
+
+
       const arregloNumeros =[numero1,numero2,numero3,numero4];
 
       const maximo = Math.max(...arregloNumeros);
@@ -63,14 +60,10 @@ export default function App() {
       }
 
       setTotal({
-        /*AFPFee: AFP.toFixed(2).replace('.', ','),
-        ISSSFee: ISSS.toFixed(2).replace('.', ','),
-        RENTAFee: RENTA.toFixed(2).replace('.', ','),
-        SueldoNeto: sueldoneto.toFixed(2).replace('.', ',')*/
        maxi:maximo,
        mini:minimo
       }); 
-    //}
+    }
   };
 
 
